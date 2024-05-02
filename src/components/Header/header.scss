@@ -1,0 +1,55 @@
+@import "../../utils/styles/variables.scss";
+@import "../../utils/styles/mixin.scss";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  display: none;
+
+  .nav__header {
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+
+      .menu__item {
+        font-weight: 400;
+        @include title-hover;
+
+        &:hover {
+          color: white;
+      }
+
+        &--selected {
+          background-size: 100% 0.2em;
+        }
+      }
+    }
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  display: block;
+  animation: fadeInHeader 1s ease-in-out forwards;
+}
+
+@keyframes fadeInHeader {
+  0% {
+    opacity: 0; /* Start with header invisible */
+    transform: translateY(-50px); /* Move header up slightly */
+  }
+  100% {
+    opacity: 1; /* Fully reveal header */
+    transform: translateY(0); /* Return header to its original position */
+  }
+}

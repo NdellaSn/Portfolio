@@ -1,0 +1,59 @@
+@import "../../utils/styles/mixin.scss";
+
+.welcome {
+  position: relative;
+
+  .welcome__img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__bloc__title {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .letter-by-letter {
+      color: white;
+      width: 100%;
+      align-content: center;
+      text-align: left;
+      line-height: 48px;
+
+      .hello {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 200;
+      }
+
+      .tap-bar {
+        animation: typing 1s ease-in-out infinite;
+        animation-delay: 0.5s;
+      }
+    }
+  }
+
+  .welcome__cover {
+    @include absolute-full;
+    background-color: black;
+    opacity: 0.5;
+  }
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0; /* Start with text hidden */
+  }
+  50% {
+    opacity: 1; /* Text appears */
+  }
+  100% {
+    opacity: 0; /* Text disappears */
+  }
+}

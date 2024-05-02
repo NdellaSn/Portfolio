@@ -1,0 +1,12 @@
+@import "../../utils/styles/variables.scss";
+@import "../../utils/styles/mixin.scss";
+
+.a-propos{
+    h2{
+        display: inline-block;
+        @include title-hover(100%, 30%);
+        &:hover {
+            color: $dark;
+        }
+    }
+}

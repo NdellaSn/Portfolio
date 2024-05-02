@@ -1,0 +1,21 @@
+@mixin absolute-full() {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin title-hover($width:100%, $height:100%) {
+  background-image: linear-gradient(120deg, $Main700 0%, $Main400 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  padding: 5px;
+
+  &:hover {
+    background-size: $width $height;
+    border-radius: 5px;
+  }
+}
