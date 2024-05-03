@@ -3,9 +3,9 @@ function Footer() {
 
 
     return (
-        <nav>{
+        <footer>{
             <p>footer</p>
-        }</nav>
+        }</footer>
     )
 
 }

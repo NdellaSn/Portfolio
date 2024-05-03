@@ -10,7 +10,7 @@ function Welcome() {
     })
 
     return (
-        <div className='welcome'>
+        <div className='welcome section-item' data-item="0" id='welcome'>
             <img className='welcome__img' src={bg} alt='background bienvenu' />
             <div className='welcome__bloc__title'>
                 <h1 className='letter-by-letter' >
