@@ -18,8 +18,30 @@ code {
   box-sizing: border-box;
 }
 
-
-header, section, footer{
+header,
+section,
+footer {
   padding: 2% 8%;
+}
 
+
+.section__title {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+
+  span {
+    font-size: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: -34px;
+    z-index: 0;
+    opacity: 0.03;
+    font-weight: 700;
+  }
 }

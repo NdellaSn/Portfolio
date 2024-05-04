@@ -4,7 +4,7 @@ import placeholder from '../../assets/images/91372.png'
 function Apropos() {
     return (
         <section className='a-propos section-item' data-item="1"  id='a-propos'>
-            <h2 className='a-propos__title'>A PROPOS
+            <h2 className='section__title '>A PROPOS
                 <span>Qui suis-je ?</span>
             </h2>
 

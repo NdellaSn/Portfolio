@@ -2,40 +2,11 @@
 @import "../../utils/styles/mixin.scss";
 
 .competences {
-  .competences__title {
-    position: relative;
-    margin-top: 40px;
-    margin-bottom: 70px;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 500;
-
-    span {
-        font-size: 80px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        text-align: center;
-        top: -34px;
-        z-index: 0;
-        opacity: 0.03;
-        font-weight: 700;
-    }
-  }
-
-  .placeholder{
+  .competences__logiciels {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
 
-    img{
-        width: 45%;
-        object-fit: contain;
     
-    }
-
-    p{
-        text-align: justify;
-        line-height: 30px;
-    }
   }
 }
