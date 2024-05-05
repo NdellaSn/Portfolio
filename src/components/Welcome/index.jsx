@@ -20,6 +20,9 @@ function Welcome() {
 
                 </h1>
             </div>
+            <div className='welcome__down__page'>
+            <i class="fa-solid fa-arrow-down"></i>
+            </div>
             <div className='welcome__cover'></div>
         </div>
     )

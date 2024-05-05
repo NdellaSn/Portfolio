@@ -12,7 +12,7 @@
   &__bloc__title {
     position: absolute;
     left: 10%;
-    top: 50%;
+    top: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,16 +44,54 @@
     background-color: black;
     opacity: 0.5;
   }
+
+  .welcome__down__page {
+    position: absolute;
+    bottom: 5%;
+    z-index: 10;
+    color: white;
+    right: 49%;
+    width: 3%;
+    padding: 4px;
+    text-align: center;
+    border: 2px solid transparent;
+
+    border-radius: 13px;
+    height: 50px;
+
+
+    i {
+      font-size: 20px;
+      animation: move 1s ease-in-out 0s infinite alternate;
+    }
+  }
 }
+
+
+@keyframes move {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
 
 @keyframes typing {
   0% {
-    opacity: 0; /* Start with text hidden */
+    opacity: 0;
+    /* Start with text hidden */
   }
+
   50% {
-    opacity: 1; /* Text appears */
+    opacity: 1;
+    /* Text appears */
   }
+
   100% {
-    opacity: 0; /* Text disappears */
+    opacity: 0;
+    /* Text disappears */
   }
 }
