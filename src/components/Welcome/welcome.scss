@@ -65,6 +65,21 @@
       animation: move 1s ease-in-out 0s infinite alternate;
     }
   }
+
+  .welcome__link {
+    display: flex;
+    gap: 20px;
+    align-self: baseline;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+    }
+  }
 }
 
 
