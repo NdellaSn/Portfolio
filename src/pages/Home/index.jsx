@@ -2,6 +2,7 @@ import Welcome from '../../components/Welcome';
 import Apropos from '../../components/Apropos';
 import './home.scss'
 import Competences from '../../components/Competences';
+import ProjetsList from '../../components/ProjetsList';
 
 function Home() {
 
@@ -11,6 +12,7 @@ function Home() {
             <Welcome></Welcome>
             <Apropos></Apropos>
             <Competences></Competences>
+            <ProjetsList></ProjetsList>
         </main>
 
     )
