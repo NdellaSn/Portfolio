@@ -1,18 +1,18 @@
 import Projet from '../Projet/index.jsx'
 import './projetsList.scss'
-import logicielList from "../../data/logiciels.js";
+import projetsList from "../../data/projets.js";
 
 function ProjetsList() {
     return (
-        <section className='projets section-item' data-item="2"  id='projets'>
+        <section className='projets section-item' data-item="3" id='projets'>
             <h2 className='section__title'>PROJETS
                 <span>Réalisations </span>
             </h2>
-            <div className='projets__logiciels'>
+            <div className='projets__list'>
                 {
-                    logicielList.map((logiciel)=> <Projet key={logiciel.id} ></Projet>)
+                    projetsList.map((projet) => <Projet key={projet.id} data={projet} ></Projet>)
                 }
-                
+
 
             </div>
 
