@@ -1,0 +1,49 @@
+@import "../../utils/styles/variables.scss";
+@import "../../utils/styles/mixin.scss";
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $dark;
+    gap: 20px;
+
+    .footer__logo {
+        width: 5%;
+    }
+
+    .nav__footer {
+        color: $Gris400;
+        list-style: none;
+        display: flex;
+        padding: 0;
+        gap: 30px;
+        font-size: 12px;
+
+    }
+
+    .footer_reseau {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        * {
+            color: $Gris400;
+        }
+
+        .footer__link {
+            display: flex;
+            gap: 20px;
+        }
+
+        span {
+            width: 14%;
+        }
+
+        .footer__copyright {
+            font-size: 10px;
+        }
+
+    }
+
+}

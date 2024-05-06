@@ -1,7 +1,7 @@
 export function handleScroll(setIsScrolled) {
 
     // pour afficher ou le menu
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
         setIsScrolled(true);
     } else {
         setIsScrolled(false);
@@ -15,8 +15,8 @@ export function handleScroll(setIsScrolled) {
         const section = sections[i];
         const sectionTop = section.getBoundingClientRect().top + window.scrollY;
         const sectionBottom = section.getBoundingClientRect().bottom + window.scrollY;
-        
-        const postionScroll = window.scrollY +100;
+
+        const postionScroll = window.scrollY + 100;
 
         if (postionScroll > sectionTop && postionScroll < sectionBottom) {
             return parseInt(section.dataset.item);

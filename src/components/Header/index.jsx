@@ -1,7 +1,7 @@
 import { handleScroll } from '../../utils/animations/scroll';
 import './header.scss'
 import { useEffect, useState } from 'react';
-import logo from '../../assets/images/logo/logo.png'
+import logo from '../../assets/images/logo/logo-noir.png'
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);

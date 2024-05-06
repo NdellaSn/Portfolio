@@ -9,7 +9,7 @@ header {
   width: 100%;
   background-color: white;
 
-  .logo{
+  .logo {
     img {
       width: 36%;
     }
@@ -59,9 +59,9 @@ header {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-

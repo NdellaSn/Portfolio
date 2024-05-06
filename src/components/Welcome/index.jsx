@@ -23,7 +23,7 @@ function Welcome() {
                     <a href="https://www.linkedin.com/in/mame-ndella-sene-0123321a5/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://github.com/NdellaSn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
                     <a href="mailto:contact@mamendella.fr" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-envelope"></i></a>
-                    <a href="../../assets/mame-ndella-sene.pdf" download="mame-ndella-sene.pdf"><i class="fa-regular fa-file-pdf"></i></a>
+                    <a href="/mame-ndella-sene.pdf" download="mame-ndella-sene.pdf"><i class="fa-regular fa-file-pdf"></i></a>
                 </div>
             </div>
             <div className='welcome__down__page'>
