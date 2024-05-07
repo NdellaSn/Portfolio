@@ -2,12 +2,16 @@
 @import "../../utils/styles/mixin.scss";
 
 .projets {
- 
+
   .projets__list {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
-    
-    
+
+    @media screen and (max-width: 765px) {
+      grid-template-columns: 1fr
+
+    }
+
   }
 }

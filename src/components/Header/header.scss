@@ -9,16 +9,99 @@ header {
   width: 100%;
   background-color: white;
 
-  .logo {
-    img {
-      width: 36%;
+  @media screen and (max-width: 765px) {
+    background: none;
+    height: 100vh;
+
+  }
+
+  #nav-menu{
+    @media screen and (max-width: 765px) {
+      display: none;
     }
   }
+
+  .nav__menu_bg{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: $dark;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 22;
+
+    @media screen and (max-width: 765px) {
+      display: block;
+    }
+  }
+
+  .nav__menu__btn {
+    display: none;
+
+    @media screen and (max-width: 765px) {
+      display: block;
+      background: none;
+      border: none;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 25px;
+    }
+
+
+    &--open {
+      color: white;
+      z-index: 20;
+    }
+
+    &--close {
+      color: $dark;
+      z-index: 30;
+    }
+  }
+
 
   .nav__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 765px) {
+      background: white;
+      flex-direction: column;
+      justify-content: start;
+      gap: 20%;
+      padding-top: 80px;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 25;
+      height: 100vh;
+      width: 60%;
+
+    }
+
+
+    .logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 36%;
+
+        @media screen and (max-width: 765px) {
+          width: 54%;
+        }
+      }
+
+      @media screen and (max-width: 765px) {
+        order: 1;
+      }
+
+    }
 
     .menu {
       list-style: none;
@@ -27,11 +110,27 @@ header {
       margin: 0;
       padding: 0;
 
+
+
+      @media screen and (max-width: 765px) {
+        flex-direction: column;
+        gap: 40px
+      }
+
       .menu__item {
         font-weight: 400;
         @include title-hover;
 
-        &:hover {
+        * {
+          text-decoration: none;
+          color: $dark;
+
+          @media screen and (max-width: 765px) {
+            font-size: 22px;
+          }
+        }
+
+        &:hover * {
           color: white;
           cursor: pointer;
         }
@@ -48,10 +147,19 @@ header {
   opacity: 0;
   display: block;
   animation: fadeInHeader 1s ease-in-out forwards;
+
+  @media screen and (max-width: 765px) {
+    opacity: 1;
+  }
+
 }
 
 .fade-out {
   display: none;
+
+  @media screen and (max-width: 765px) {
+    display: block;
+  }
 }
 
 @keyframes fadeInHeader {

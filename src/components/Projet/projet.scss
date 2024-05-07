@@ -9,6 +9,7 @@
     flex-direction: column;
     cursor: pointer;
 
+
     .projet__cover {
         width: 100%;
         height: 70%;
@@ -26,7 +27,7 @@
         background-color: $dark;
         color: white;
         height: 30%;
-        padding: 6%;
+        padding: 5%;
 
         * {
             padding: 0;
@@ -43,7 +44,7 @@
             font-weight: 400;
             display: flex;
             gap: 18px;
-            padding: 2% 0;
+            padding: 1% 0;
             transition: all 0.3s ease-in-out;
 
             a {
@@ -82,19 +83,23 @@
 
 
     &:nth-of-type(4) {
-        grid-column: span 2;
-        grid-row: span 2;
-        height: 630px;
 
-        .projet__cover {
-            height: 80%;
-        }
+        @media screen and (min-width: 766px) {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 630px;
 
-        .projet__footer {
-            height: 20%;
+            .projet__cover {
+                height: 80%;
+            }
 
-            &__title {
-                margin-bottom: 2%;
+            .projet__footer {
+                height: 20%;
+
+                &__title {
+                    margin-bottom: 10px;
+
+                }
 
             }
 

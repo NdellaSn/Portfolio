@@ -3,13 +3,44 @@
 
 .a-propos {
 
+  .me__contacter{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    button{
+      background-image: linear-gradient(120deg, $Main700 0%, $Main400 100%);
+      padding: 9px 20px;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-weight: 400;
+      @media screen and (max-width: 765px) {       
+        height: 50px;
+        width: 60%;
+      }
+    }
+  }
+  
+
   .placeholder {
     display: flex;
     gap: 30px;
 
+    @media screen and (max-width: 765px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     img {
       width: 45%;
       object-fit: contain;
+
+      @media screen and (max-width: 765px) {
+        order: 1;
+      width: 100%;
+        
+      }
     }
 
     p {
