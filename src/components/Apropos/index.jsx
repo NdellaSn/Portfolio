@@ -1,7 +1,13 @@
 import './apropos.scss'
 import placeholder from '../../assets/images/91372.png'
+import { useState } from 'react';
+import Modal from 'react-modal';
+import Contact from '../Contact';
 
 function Apropos() {
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+
     return (
         <section className='a-propos section-item' data-item="1" id='a-propos'>
             <h2 className='section__title'>A PROPOS
@@ -16,7 +22,10 @@ function Apropos() {
             </div>
 
             <div className='me__contacter'>
-                <button><i className="fa-regular fa-envelope"></i> Me contacter</button>
+                <button onClick={() => setIsOpen(true)}><i className="fa-regular fa-envelope"></i> Me contacter</button>
+                <Modal isOpen={modalIsOpen} >
+                    <Contact setIsOpen={setIsOpen}></Contact>
+                </Modal>
             </div>
 
         </section>
