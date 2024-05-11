@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import Contact from '../Contact';
 
+Modal.setAppElement('#root');
+
 function Apropos() {
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -22,7 +24,7 @@ function Apropos() {
             </div>
 
             <div className='me__contacter'>
-                <button onClick={() => setIsOpen(true)}><i className="fa-regular fa-envelope"></i> Me contacter</button>
+                <button onClick={() => setIsOpen(true)} ><i className="fa-regular fa-envelope"></i> Me contacter</button>
                 <Modal isOpen={modalIsOpen} >
                     <Contact setIsOpen={setIsOpen}></Contact>
                 </Modal>

@@ -50,21 +50,21 @@ function Contact({ setIsOpen }) {
                     <div className="form__row">
                         <div className='form__row__col floating__label'>
                             <input type="text" id="nom" placeholder='' onChange={(e) => { setNom(e.target.value); validateForm() }} />
-                            <label className="form__label" for="nom">Nom</label>
+                            <label className="form__label" htmlFor="nom">Nom</label>
                         </div>
                         <div className="form__row__col floating__label">
                             <input type="text" id="prenom" placeholder='' onChange={(e) => { setPrenom(e.target.value); validateForm() }} />
-                            <label className="form__label" for="prenom">Prénom</label>
+                            <label className="form__label" htmlFor="prenom">Prénom</label>
                         </div>
                     </div>
 
                     <div className="form__row floating__label">
                         <input type="email" id="mail" placeholder='' onChange={(e) => { setMail(e.target.value); validateForm() }} />
-                        <label className="form__label" for="mail">Email</label>
+                        <label className="form__label" htmlFor="mail">Email</label>
                     </div>
                     <div className="form__row floating__label">
                         <textarea id="message" placeholder='' onChange={(e) => { setMessage(e.target.value); validateForm() }}></textarea>
-                        <label className="form__label" for="message">message</label>
+                        <label className="form__label" htmlFor="message">message</label>
                     </div>
 
 
