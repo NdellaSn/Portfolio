@@ -1,43 +1,15 @@
-import { useState } from 'react'
 import Coordonnee from '../Coordonnee'
 import './contact.scss'
-//import sendEmail from '../../utils/services/sendMail'
+import ContactForm from '../ContactForm'
 
-function Contact({ setIsOpen }) {
-    const [prenom, setPrenom] = useState('')
-    const [nom, setNom] = useState('')
-    const [mail, setMail] = useState('')
-    const [message, setMessage] = useState('')
-    const [valid, setValid] = useState(false)
+function Contact() {
 
-    function validateForm() {
-
-        setValid(prenom !== '' && nom !== '' && mail !== '' && message !== '')
-    }
-
-    function onBtnClic(e) {
-        e.preventDefault();
-        console.log(prenom);
-        console.log(nom);
-        console.log(mail);
-        console.log(message);
-        const mailBody = "Bonjour,Vous venez de recevoir un mail de la part de "
-            + prenom + ' ' + nom + ' : ' + message;
-
-        //sendEmail(mailBody, mail);
-
-
-    }
 
     return (
-        <div className='contact'>
-            <div className='contact__header'>
-                <h3 className='contact__header__title'>Contact</h3>
-                <button className='contact__header__close' onClick={() => setIsOpen(false)}>
-                    <i className="fa-solid fa-xmark"></i>
-                </button>
-
-            </div>
+        <section className='contact section-item' data-item="4" id='contact'>
+            <h2 className='section__title'>Contact
+                <span>Contacter</span>
+            </h2>
 
             <div className='contact__body'>
                 <div className="coordonnees">
@@ -46,37 +18,11 @@ function Contact({ setIsOpen }) {
                     <Coordonnee title="Mail" donnee="contact@mamendella.fr" icon="fa-regular fa-envelope" ></Coordonnee>
                 </div>
 
-                <form className="form" >
-                    <div className="form__row">
-                        <div className='form__row__col floating__label'>
-                            <input type="text" id="nom" placeholder='' onChange={(e) => { setNom(e.target.value); validateForm() }} />
-                            <label className="form__label" htmlFor="nom">Nom</label>
-                        </div>
-                        <div className="form__row__col floating__label">
-                            <input type="text" id="prenom" placeholder='' onChange={(e) => { setPrenom(e.target.value); validateForm() }} />
-                            <label className="form__label" htmlFor="prenom">Prénom</label>
-                        </div>
-                    </div>
+                <ContactForm></ContactForm>
 
-                    <div className="form__row floating__label">
-                        <input type="email" id="mail" placeholder='' onChange={(e) => { setMail(e.target.value); validateForm() }} />
-                        <label className="form__label" htmlFor="mail">Email</label>
-                    </div>
-                    <div className="form__row floating__label">
-                        <textarea id="message" placeholder='' onChange={(e) => { setMessage(e.target.value); validateForm() }}></textarea>
-                        <label className="form__label" htmlFor="message">message</label>
-                    </div>
-
-
-                    <div className="form__row">
-                        <button className="form__submit" id="submit-contact" disabled={!valid} onClick={(e) => { onBtnClic(e) }}> Envoyer</button>
-
-                    </div>
-
-                </form>
             </div >
 
-        </div >
+        </section >
     )
 
 }

@@ -3,6 +3,7 @@ import Apropos from '../../components/Apropos';
 import './home.scss'
 import Competences from '../../components/Competences';
 import ProjetsList from '../../components/ProjetsList';
+import Contact from '../../components/Contact';
 
 function Home() {
 
@@ -13,6 +14,7 @@ function Home() {
             <Apropos></Apropos>
             <Competences></Competences>
             <ProjetsList></ProjetsList>
+            <Contact></Contact>
         </main>
 
     )

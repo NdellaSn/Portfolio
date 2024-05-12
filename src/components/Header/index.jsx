@@ -41,6 +41,7 @@ function Header() {
                         <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><Link to="#a-propos">A propos</Link></li>
                         <li className={selectedItem === 2 ? 'menu__item--selected menu__item ' : 'menu__item '}><Link to="#competences">Compétences</Link></li>
                         <li className={selectedItem === 3 ? 'menu__item--selected menu__item ' : 'menu__item '}><Link to="#projets">Projets</Link></li>
+                        <li className={selectedItem === 4 ? 'menu__item--selected menu__item ' : 'menu__item '}><Link to="#contact">Contact</Link></li>
                     </ul>
                 </div>
 

@@ -1,4 +1,10 @@
 import cover from '../assets/images/971.png'
+import booki from '../assets/images/projets/Booki.webp'
+import kasa from '../assets/images/projets/Kasa.webp'
+import OhMyFood from '../assets/images/projets/Ohmyfood.webp'
+import Print from '../assets/images/projets/Print.webp'
+import Nina from '../assets/images/projets/nina.webp'
+import argentbank from '../assets/images/projets/argentbank.webp'
 
 
 const projetsList = [
@@ -7,7 +13,7 @@ const projetsList = [
         "name": "Nina",
         "title": "Nina",
         "tags": "Référencement SEO",
-        "cover": cover,
+        "cover": Nina,
         "github": "https://github.com/NdellaSn/Nina",
         "lien": "https://ndellasn.github.io/Nina/"
     },
@@ -16,7 +22,7 @@ const projetsList = [
         "name": "Booki",
         "title": "Booki",
         "tags": "HTML - CSS",
-        "cover": cover,
+        "cover": booki,
         "github": "https://github.com/NdellaSn/Projet3",
         "lien": "https://ndellasn.github.io/Projet3/"
     },
@@ -26,7 +32,7 @@ const projetsList = [
         "name": "Print it",
         "title": "Print it",
         "tags": "Java Script",
-        "cover": cover,
+        "cover": Print,
         "github": "https://github.com/NdellaSn/Print-it-JS",
         "lien": "https://ndellasn.github.io/Print-it-JS/"
     },
@@ -37,7 +43,7 @@ const projetsList = [
         "name": "Kasa",
         "title": "Kasa",
         "tags": "REACT",
-        "cover": cover,
+        "cover": kasa,
         "github": "https://github.com/NdellaSn/Kasa",
         "lien": null
     },
@@ -48,7 +54,7 @@ const projetsList = [
         "name": "OhMyFood",
         "title": "OhMyFood",
         "tags": "HTML-CSS",
-        "cover": cover,
+        "cover": OhMyFood,
         "github": "https://github.com/NdellaSn/OhMyFood",
         "lien": "https://ndellasn.github.io/OhMyFood/"
     },
@@ -60,7 +66,7 @@ const projetsList = [
         "name": "Argent Bank",
         "title": "Argent Bank",
         "tags": "REACT - REDUX",
-        "cover": cover,
+        "cover": argentbank,
         "github": "https://github.com/NdellaSn/ArgentBank-website",
         "lien": null
     },

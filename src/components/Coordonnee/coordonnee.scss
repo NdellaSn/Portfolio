@@ -5,14 +5,16 @@
 .coordonnee {
     border: 1px solid $Gris300;
     border-radius: 5px;
-    padding: 22px 15px !important;                
+    padding: 22px 15px !important;
     display: flex;
     flex-direction: row;
     gap: 10px;
     align-items: center;
     justify-content: space-between;
-    
-    div{
+    background: $dark;
+    color: white;
+
+    div {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -20,12 +22,12 @@
 
     p {
         font-size: 14px;
-        color: $Gris600;
+        color: $Gris400;
     }
 
-    i{
+    i {
         font-size: 24px;
         margin-left: 5%;
-        opacity: 0.3;
+        color: $Gris400;
     }
 }
