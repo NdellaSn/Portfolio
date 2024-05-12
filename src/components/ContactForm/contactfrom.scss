@@ -10,7 +10,25 @@
     border: 1px solid $Gris300;
     padding: 3%;
     background: $dark;
-    
+    position: relative;
+
+    .loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($Main800, 0.8) !important;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        opacity: 0.5;
+        display: none;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
     .floating__label {
         position: relative;
 
@@ -23,8 +41,8 @@
             border: 1px solid $Gris300;
             border-radius: 4px;
 
-            &:not(:placeholder-shown) + label,
-            &:focus + label {
+            &:not(:placeholder-shown)+label,
+            &:focus+label {
                 transform: translateY(-10px);
                 font-size: 12px;
                 font-weight: 400;
@@ -41,36 +59,51 @@
             transition: all 0.3s ease-in-out;
         }
 
-        textarea{
+        textarea {
             padding-top: 8%;
             height: 90px;
         }
 
 
-        
+
     }
 
 
-    .form__row{
+    .form__row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
-        .form__row__col{
+        .form__row__col {
             width: 49%;
         }
 
-        .form__submit{
+        .form__submit {
             background-color: $Main800;
             color: white;
             padding: 10px 30px;
             border: none;
             border-radius: 2px;
 
-            &:disabled{
-                cursor:not-allowed;
-            background-color: $Gris400;
+            &:disabled {
+                cursor: not-allowed;
+                background-color: $Gris400;
 
             }
+        }
+
+        .mail__success{
+            color: white;
+            display: none;
+            font-size: 14px;
+
+        }
+
+        .mail__error{
+            color: #ffaaaa;
+            margin-left: 14px;
+            display: none;
+            font-size: 14px;
         }
     }
 

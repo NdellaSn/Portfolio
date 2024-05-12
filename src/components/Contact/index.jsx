@@ -7,7 +7,7 @@ function Contact() {
 
     return (
         <section className='contact section-item' data-item="4" id='contact'>
-            <h2 className='section__title'>Contact
+            <h2 className='section__title'>CONTACT
                 <span>Contacter</span>
             </h2>
 
