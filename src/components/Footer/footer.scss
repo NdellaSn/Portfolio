@@ -14,12 +14,17 @@ footer {
     }
 
     .nav__footer {
-        color: $Gris400;
         list-style: none;
         display: flex;
         padding: 0;
         gap: 30px;
         font-size: 12px;
+
+        * {
+            text-decoration: none;
+            color: $Gris400;
+        }
+
 
     }
 
@@ -48,15 +53,16 @@ footer {
 
             }
 
-            .dark__mode__btn{
+            .dark__mode__btn {
                 border-radius: 20px;
                 width: 30px;
                 height: 30px;
                 background: none;
-                border: 1px solid $Gris400;            }
+                border: 1px solid $Gris400;
+            }
         }
 
-        
+
 
     }
 

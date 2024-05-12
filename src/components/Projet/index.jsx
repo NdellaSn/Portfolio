@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import './projet.scss'
+import Modal from 'react-modal';
+
+
+Modal.setAppElement('#root');
 
 function Projet({ data }) {
+    const [modalIsOpen, setIsOpen] = useState(false);
+
     return (
         <article className='projet'>
             <div className='projet__cover'>
