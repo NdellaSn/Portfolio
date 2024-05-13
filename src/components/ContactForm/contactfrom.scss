@@ -11,6 +11,10 @@
     padding: 3%;
     background: $dark;
     position: relative;
+    @media screen and (max-width: 765px) {
+        width: 100%;
+        
+    }
 
     .loader {
         position: absolute;

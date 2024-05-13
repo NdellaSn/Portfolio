@@ -1,11 +1,26 @@
-header{
+header {
     //display: block !important;
 }
 
-.error{
+.error {
+    height: 70vh;
     display: flex;
     justify-content: center;
-    img{
-        width: 40%;
+    position: relative;
+
+    @media screen and (max-width: 765px) {
+        height: 78vh;
+    }
+    img {
+        width: 50%;
+        object-fit: contain;
+    }
+
+    .back__home{
+        position: absolute;
+        bottom: 10%;
+        color: black;
+        font-weight: bolder;
+        padding: 10px !important;
     }
 }

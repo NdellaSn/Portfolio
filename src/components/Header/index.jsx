@@ -9,8 +9,9 @@ function Header() {
     const [selectedItem, setSelectedItem] = useState(0);
 
     useEffect(() => {
+        let item = handleScroll(setIsScrolled);
         window.addEventListener('scroll', () => {
-            const item = handleScroll(setIsScrolled);
+            item = handleScroll(setIsScrolled);
             if (item !== -1)
                 setSelectedItem(item);
         });
@@ -37,11 +38,11 @@ function Header() {
                 <div className='nav__header'>
                     <Link to="/" className='logo'><img src={logo} alt="" /></Link>
                     <ul className='menu'>
-                        <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="#welcome">Accueil</a></li>
-                        <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="#a-propos">A propos</a></li>
-                        <li className={selectedItem === 2 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="#competences">Compétences</a></li>
-                        <li className={selectedItem === 3 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="#projets">Projets</a></li>
-                        <li className={selectedItem === 4 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="#contact">Contact</a></li>
+                        <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#welcome">Accueil</a></li>
+                        <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#a-propos">A propos</a></li>
+                        <li className={selectedItem === 2 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#competences">Compétences</a></li>
+                        <li className={selectedItem === 3 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#projets">Projets</a></li>
+                        <li className={selectedItem === 4 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#contact">Contact</a></li>
                     </ul>
                 </div>
 

@@ -12,6 +12,12 @@
         display: flex;
         justify-content: space-between;
 
+        @media screen and (max-width: 765px) {
+            flex-direction: column;
+            gap: 30px;
+
+        }
+
 
         .coordonnees {
             display: flex;
@@ -19,7 +25,10 @@
             justify-content: space-between;
             gap: 13px;
             width: 30%;
-
+@media screen and (max-width: 765px) {
+           width: 100%;
+            
+        }
 
         }
     }
