@@ -1,8 +1,8 @@
-import Projet from '../Projet/index.jsx'
-import './projetsList.scss'
+import ProjetCover from '../ProjetCover/index.jsx'
+import './projets.scss'
 import projetsList from "../../data/projets.js";
 
-function ProjetsList() {
+function Projets() {
     return (
         <section className='projets section-item' data-item="3" id='projets'>
             <h2 className='section__title'>PROJETS
@@ -10,7 +10,7 @@ function ProjetsList() {
             </h2>
             <div className='projets__list'>
                 {
-                    projetsList.map((projet) => <Projet key={projet.id} data={projet} ></Projet>)
+                    projetsList.map((projet) => <ProjetCover key={projet.id} data={projet} ></ProjetCover>)
                 }
 
 
@@ -20,4 +20,4 @@ function ProjetsList() {
     )
 }
 
-export default ProjetsList
+export default Projets

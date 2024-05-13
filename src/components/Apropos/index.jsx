@@ -19,8 +19,8 @@ function Apropos() {
             </div>
 
             <div className='me__contacter'>
-                <a className='btn' href="#contact" ><i className="fa-regular fa-envelope"></i> Me contacter</a>
-                
+                <a className='' href="#contact" ><i className="fa-regular fa-envelope"></i> Me contacter</a>
+
             </div>
 
         </section>

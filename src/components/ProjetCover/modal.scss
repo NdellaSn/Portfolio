@@ -1,0 +1,30 @@
+@import "../../utils/styles/variables.scss";
+@import "../../utils/styles/mixin.scss";
+
+
+.ReactModal__Overlay,
+.ReactModal__Overlay--after-open {
+    z-index: 30;
+    background-color: rgba($Main800, 0.6) !important;
+}
+
+.ReactModal__Content,
+.ReactModal__Content--after-open {
+    top: 20% !important;
+    left: 10% !important;
+    height: 80%;
+    width: 80%;
+    padding: 0 !important;
+
+}
+
+.modal__header {
+position: absolute;
+top: 4%;
+left: 2%;
+    .btn__close {
+        background: none;
+        border: none;
+        font-size: 22px;
+    }
+}
