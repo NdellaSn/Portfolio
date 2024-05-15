@@ -4,7 +4,7 @@ function Logiciel({logo, name}) {
     return (
         <article className='logiciel'>
             <div className='logiciel__bg'>
-                <img src={logo} alt={name} />
+                <img src={logo} alt={'logiciel '+name} />
             </div>
             <div className='logiciel__cover'>
                 <p>{name}</p>

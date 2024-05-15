@@ -29,14 +29,14 @@ function Header() {
 
     return (
         <header className={isScrolled ? 'fade-in' : 'fade-out'}>
-            <button className='nav__menu__btn nav__menu__btn--open' onClick={() => { openMenu() }}><i className="fa-solid fa-bars"></i></button>
+            <button className='nav__menu__btn nav__menu__btn--open' onClick={() => { openMenu() }} title='boutton menu'><i className="fa-solid fa-bars"></i></button>
             <nav id='nav-menu' >
 
-                <button className='nav__menu__btn nav__menu__btn--close' onClick={() => { closeMenu() }}><i className="fa-solid fa-xmark"></i></button>
+                <button className='nav__menu__btn nav__menu__btn--close' onClick={() => { closeMenu() }} title='boutton fermeture menu'><i className="fa-solid fa-xmark"></i></button>
                 <div className='nav__menu_bg'></div>
 
                 <div className='nav__header'>
-                    <Link to="/" className='logo'><img src={logo} alt="" /></Link>
+                    <Link to="/" className='logo'><img src={logo} alt="logo de mon site" /></Link>
                     <ul className='menu'>
                         <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#welcome">Accueil</a></li>
                         <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#a-propos">A propos</a></li>

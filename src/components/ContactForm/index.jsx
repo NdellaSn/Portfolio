@@ -58,8 +58,8 @@ function ContactForm() {
 
             <div className="form__row">
                 <button className="form__submit" id="submit-contact" disabled={!valid} onClick={(e) => { onBtnClic(e) }}> Envoyer</button>
-                <label className="mail__success">Votre message a été envoyé avec succès.</label>
-                <label className="mail__error">Votre message n'a pas pu être envoyé. Nous nous excusons pour le désagrément.</label>
+                <p className="mail__success">Votre message a été envoyé avec succès.</p>
+                <p className="mail__error">Votre message n'a pas pu être envoyé. Nous nous excusons pour le désagrément.</p>
             </div>
 
         </form>

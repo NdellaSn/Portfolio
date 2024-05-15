@@ -22,7 +22,7 @@
     @media screen and (max-width: 765px) {
       top: 20%;
     }
-    
+
 
     .letter-by-letter {
       color: white;
@@ -31,7 +31,7 @@
       text-align: left;
       line-height: 48px;
 
-    
+
 
       .hello {
         margin: 0;
@@ -116,12 +116,12 @@
 
 @keyframes typing {
   0% {
-    opacity: 0;
+    display: none;
     /* Start with text hidden */
   }
 
   50% {
-    opacity: 1;
+    display: inline-block;
     /* Text appears */
   }
 

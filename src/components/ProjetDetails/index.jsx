@@ -24,7 +24,7 @@ function Projetdetails({ data }) {
 
                     {
                         data.details.tags.map(
-                            (tag )=> <button key={tag} className='details__body__block__tags'>{tag}</button>
+                            (tag )=> <button key={tag} className='details__body__block__tags' title={'Tag '+tag} >{tag}</button>
                     )
                     }
 
