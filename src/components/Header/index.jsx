@@ -36,7 +36,7 @@ function Header() {
                 <div className='nav__menu_bg'></div>
 
                 <div className='nav__header'>
-                    <Link to="/" className='logo'><img src={logo} alt="logo de mon site" /></Link>
+                    <Link to="/" className='logo'><img src={logo} alt="logo de mon site" height="100%" width="36%" /></Link>
                     <ul className='menu'>
                         <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#welcome">Accueil</a></li>
                         <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#a-propos">A propos</a></li>

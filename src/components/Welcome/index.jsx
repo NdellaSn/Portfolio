@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import bg from '../../assets/images/971.png'
+import bg from '../../assets/images/971.webp'
 import './welcome.scss'
 
 function Welcome() {

@@ -91,6 +91,7 @@ header {
 
       img {
         width: 36%;
+        object-fit: contain;
 
         @media screen and (max-width: 765px) {
           width: 44%;

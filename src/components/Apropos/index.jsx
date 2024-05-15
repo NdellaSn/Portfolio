@@ -1,5 +1,5 @@
 import './apropos.scss'
-import placeholder from '../../assets/images/91372.png'
+import placeholder from '../../assets/images/mouhamed-ali.webp'
 import { Link } from 'react-router-dom';
 
 
@@ -15,7 +15,7 @@ function Apropos() {
                 <p>
                     Je crée des projets numériques en mettant l'accent sur l'expérience utilisateur, en m'assurant qu'ils répondent aux besoins et aux attentes du public cible défini dans l'étude marketing. Je travaille en étroite collaboration avec les équipes de conception pour aligner le concept du projet sur les personas identifiés, en utilisant une approche de conception centrée sur l'utilisateur. En utilisant la méthode de l'entonnoir, je guide le processus de développement en affinant progressivement les idées pour créer des solutions web qui sont à la fois attrayantes et fonctionnelles pour un large éventail d'utilisateurs, en mettant particulièrement l'accent sur l'inclusion et l'accessibilité.
                 </p>
-                <img src={placeholder} alt="" />
+                <img src={placeholder} alt="Maquette Mouhamed Ali" width="45%" height="100%" />
             </div>
 
             <div className='me__contacter'>

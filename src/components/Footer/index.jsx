@@ -5,7 +5,7 @@ function Footer() {
 
     return (
         <footer>
-            <img src={logo} alt='logo de mon site' className='footer__logo' />
+            <img src={logo} alt='logo de mon site' className='footer__logo' width="5%" height="100%" />
             <ul className='nav__footer'>
                 <li><a href="#welcome">Accueil</a></li>
                 <li><a href="#a-propos">A propos</a></li>
