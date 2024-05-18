@@ -1,5 +1,4 @@
 import './projetdetails.scss'
-import printDetail from '../../assets/images/projets/printDetail.png'
 
 
 function Projetdetails({ data }) {
@@ -15,7 +14,7 @@ function Projetdetails({ data }) {
                 <h4 className='details__body__title'>  {data.title} </h4>
 
                 <h5 className='details__body__subtitle'>Client: <span> {data.details.client} </span></h5>
-                
+
                 <h5 className='details__body__subtitle'>Présentation:</h5>
                 <p> {data.details.présentation}</p>
                 <h5 className='details__body__subtitle'>Objectif:</h5>
@@ -24,8 +23,8 @@ function Projetdetails({ data }) {
 
                     {
                         data.details.tags.map(
-                            (tag )=> <button key={tag} className='details__body__block__tags' title={'Tag '+tag} >{tag}</button>
-                    )
+                            (tag) => <button key={tag} className='details__body__block__tags' title={'Tag ' + tag} >{tag}</button>
+                        )
                     }
 
 

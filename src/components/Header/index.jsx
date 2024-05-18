@@ -1,7 +1,8 @@
 import { handleScroll } from '../../utils/animations/scroll';
 import './header.scss'
 import { useEffect, useState } from 'react';
-import logo from '../../assets/images/logo/logo-noir.png'
+import logo_noir from '../../assets/images/logo/logo-noir.png'
+import logo_blanc from '../../assets/images/logo/logo-blanc.png'
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -36,7 +37,10 @@ function Header() {
                 <div className='nav__menu_bg'></div>
 
                 <div className='nav__header'>
-                    <Link to="/" className='logo'><img src={logo} alt="logo de mon site" height="100%" width="36%" /></Link>
+                    <Link to="/" className='logo'>
+                        <img className='logo--noir' src={logo_noir} alt="logo de mon site" height="100%" width="36%" />
+                        <img className='logo--blanc' src={logo_blanc} alt="logo de mon site" height="100%" width="36%" />
+                        </Link>
                     <ul className='menu'>
                         <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#welcome">Accueil</a></li>
                         <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#a-propos">A propos</a></li>

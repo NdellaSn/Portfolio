@@ -1,7 +1,16 @@
 import './footer.scss'
 import logo from '../../assets/images/logo/logo-blanc.png'
+import { useEffect, useState } from 'react'
 function Footer() {
+    const [dark, setMode] = useState(false);
 
+    useEffect(() => {
+        if (dark) {
+            document.getElementById('root').classList.add('dark');
+        } else {
+            document.getElementById('root').classList.remove('dark');
+        }
+    }, [dark]);
 
     return (
         <footer>
@@ -16,7 +25,10 @@ function Footer() {
             </ul>
             <div className='footer_reseau'>
                 <span>
-                    <button className='dark__mode__btn' title='mode dark'> <i className="fa-solid fa-moon"></i></button>
+                    <button className='dark__mode__btn' title='mode dark' onClick={() => setMode(!dark)}>
+                        {!dark && <i className="fa-solid fa-moon icon--dark"></i>}
+                        {dark && <i className="fa-solid fa-sun icon--light"></i>}
+                    </button>
                 </span>
                 <div className='footer__link'>
                     <a href="https://www.linkedin.com/in/mame-ndella-sene-0123321a5/" target="_blank" title='lien linkedin' rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>

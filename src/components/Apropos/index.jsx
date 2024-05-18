@@ -1,7 +1,5 @@
 import './apropos.scss'
 import placeholder from '../../assets/images/mouhamed-ali.webp'
-import { Link } from 'react-router-dom';
-
 
 function Apropos() {
 

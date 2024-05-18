@@ -12,6 +12,7 @@ footer {
     .footer__logo {
         width: 5%;
         object-fit: contain;
+
         @media screen and (max-width: 765px) {
             width: 10%;
 
@@ -72,12 +73,13 @@ footer {
                 width: 60%;
 
             }
-            &:nth-last-of-type(2){
+
+            &:nth-last-of-type(2) {
                 @media screen and (max-width: 765px) {
                     width: 32%;
-    
+
                 }
-    
+
             }
 
             .dark__mode__btn {
@@ -86,6 +88,7 @@ footer {
                 height: 30px;
                 background: none;
                 border: 1px solid $Gris400;
+
             }
         }
 

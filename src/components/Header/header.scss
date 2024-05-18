@@ -89,6 +89,10 @@ header {
       display: flex;
       justify-content: center;
 
+      .logo--blanc{
+        display: none;
+      }
+
       img {
         width: 36%;
         object-fit: contain;
