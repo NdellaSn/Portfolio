@@ -67,6 +67,10 @@ footer {
 
   header a {
     color: white !important;
+
+    @media screen and (max-width: 765px) {
+      color: $dark !important;
+    }
   }
 
   form label {
