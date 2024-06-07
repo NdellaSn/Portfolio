@@ -1,5 +1,6 @@
 import ProjetCover from '../ProjetCover/index.jsx'
 import './projets.scss'
+/*  */
 import projetsList from "../../data/projets.js";
 
 function Projets() {
@@ -9,7 +10,9 @@ function Projets() {
                 <span>Réalisations </span>
             </h2>
             <div className='projets__list'>
+                
                 {
+                    /*  */
                     projetsList.map((projet) => <ProjetCover key={projet.id} data={projet} ></ProjetCover>)
                 }
 

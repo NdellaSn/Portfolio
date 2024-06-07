@@ -60,17 +60,18 @@ footer {
 
 .dark {
 
-  &>*{
+  &>*,
+  .nav__header {
     background: $dark !important;
     color: white !important;
   }
 
+  .nav__menu_bg {
+    background: white;
+  }
+
   header a {
     color: white !important;
-
-    @media screen and (max-width: 765px) {
-      color: $dark !important;
-    }
   }
 
   form label {

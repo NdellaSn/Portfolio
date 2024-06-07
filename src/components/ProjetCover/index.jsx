@@ -11,7 +11,7 @@ function ProjetCover({ data }) {
 
     return (
         <>
-            <article className='projet' onClick={() => { setIsOpen(true); console.log(modalIsOpen) }}>
+            <article className='projet' onClick={() => { setIsOpen(true) }}>
                 <div className='projet__cover'>
                     <img src={data.cover} alt={"couverture projet " + data.title} />
                 </div>
@@ -28,6 +28,7 @@ function ProjetCover({ data }) {
                     </div>
                 </div>
             </article>
+            
             <Modal isOpen={modalIsOpen}>
                 <div className="modal__header">
                     <button onClick={() => setIsOpen(false)} className='btn__close' title='fermeture pop-up'>

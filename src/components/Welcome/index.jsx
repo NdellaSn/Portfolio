@@ -35,31 +35,31 @@ function Welcome() {
 }
 
 export default Welcome;
-let index = 0;
+let indexLettre = 0;
 let indexPhrase = 0
-const text = ["Je suis Mame Ndella SENE.", "Je suis Développeuse Frontend."]
+const tableauPhrases = ["Je suis Mame Ndella SENE.", "Je suis Développeuse Frontend."]
 
 
 
 function type() {
-    const phrase = text[indexPhrase];
-    if (indexPhrase >= text.length) {
+
+    if (indexPhrase >= tableauPhrases.length) {
         document.getElementById("welcome__link").style.transform = "translateY(0px)";
         document.getElementById("welcome__link").style.opacity = 1;
         return
     }
-    if (indexPhrase === 0 && index === 0) {
-        document.getElementById("presentation").innerHTML = "";
-    }
-    if (index < phrase.length) {
-        document.getElementById("presentation").innerHTML += phrase.charAt(index);
-        index++;
-        setTimeout(type, 100); // Adjust typing speed (milliseconds)
+
+    const phrase = tableauPhrases[indexPhrase];
+
+    if (indexLettre < phrase.length) {
+        document.getElementById("presentation").innerHTML += phrase.charAt(indexLettre);
+        indexLettre++;
+        setTimeout(type, 100);
     }
     else {
-        index = 0;
+        indexLettre = 0;
         indexPhrase++
-        document.getElementById("presentation").innerHTML += indexPhrase < text.length ? "<br/>" : "";
+        document.getElementById("presentation").innerHTML += (indexPhrase < tableauPhrases.length ? "<br/>" : "");
         setTimeout(type, 3000)
 
     }
