@@ -1,61 +1,93 @@
-import { handleScroll } from '../../utils/animations/scroll';
 import './header.scss'
 import { useEffect, useState } from 'react';
 import logo_noir from '../../assets/images/logo/logo-noir.png'
 import logo_blanc from '../../assets/images/logo/logo-blanc.png'
 import { Link } from 'react-router-dom';
 
+const liens = [
+    { id: 'a-propos', label: 'À propos' },
+    { id: 'projets', label: 'Projets' },
+    { id: 'competences', label: 'Compétences' },
+    { id: 'parcours', label: 'Parcours' },
+    { id: 'contact', label: 'Contact' },
+]
+
 function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(0);
+    const [menuOuvert, setMenuOuvert] = useState(false);
+    const [sectionActive, setSectionActive] = useState('');
+    const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light');
 
+    // met en avant le lien de la section visible
     useEffect(() => {
-        let item = handleScroll(setIsScrolled);
-        window.addEventListener('scroll', () => {
-            item = handleScroll(setIsScrolled);
-            if (item !== -1)
-                setSelectedItem(item);
-        });
+        const sections = liens.map((lien) => document.getElementById(lien.id)).filter(Boolean);
+        if (!sections.length) return;
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) setSectionActive(entry.target.id);
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        sections.forEach((section) => observer.observe(section));
+        return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) { }
+    }, [theme]);
 
-    const openMenu = () => {
-        document.getElementById('nav-menu').style.display = "block"
-    }
-
-    const closeMenu = () => {
-        document.getElementById('nav-menu').style.display = "none"
-    }
+    useEffect(() => {
+        document.body.style.overflow = menuOuvert ? 'hidden' : '';
+    }, [menuOuvert]);
 
     return (
-        <header className={isScrolled ? 'fade-in' : 'fade-out'}>
-            <button className='nav__menu__btn nav__menu__btn--open' onClick={() => { openMenu() }} title='boutton menu'><i className="fa-solid fa-bars"></i></button>
-            <nav id='nav-menu' >
+        <header className='header'>
+            <div className='wrap header__inner'>
+                <Link to="/" className='header__logo' onClick={() => setMenuOuvert(false)}>
+                    <img className='logo--noir' src={logo_noir} alt="Mame Ndella, accueil" width="44" height="46" />
+                    <img className='logo--blanc' src={logo_blanc} alt="" width="44" height="46" />
+                </Link>
 
-                <button className='nav__menu__btn nav__menu__btn--close' onClick={() => { closeMenu() }} title='boutton fermeture menu'><i className="fa-solid fa-xmark"></i></button>
-                <div className='nav__menu_bg'></div>
-
-                <div className='nav__header'>
-                    <Link to="/" className='logo'>
-                        <img className='logo--noir' src={logo_noir} alt="logo de mon site" height="100%" width="36%" />
-                        <img className='logo--blanc' src={logo_blanc} alt="logo de mon site" height="100%" width="36%" />
-                        </Link>
-                    <ul className='menu'>
-                        <li className={selectedItem === 0 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#welcome">Accueil</a></li>
-                        <li className={selectedItem === 1 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#a-propos">A propos</a></li>
-                        <li className={selectedItem === 2 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#competences">Compétences</a></li>
-                        <li className={selectedItem === 3 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#projets">Projets</a></li>
-                        <li className={selectedItem === 4 ? 'menu__item--selected menu__item ' : 'menu__item '}><a href="/#contact">Contact</a></li>
+                <nav className={menuOuvert ? 'nav nav--open' : 'nav'} id='nav-menu' aria-label='Navigation principale'>
+                    <ul className='nav__list'>
+                        {liens.map((lien) => (
+                            <li key={lien.id}>
+                                <a
+                                    href={'/#' + lien.id}
+                                    className={sectionActive === lien.id ? 'nav__link nav__link--active' : 'nav__link'}
+                                    aria-current={sectionActive === lien.id ? 'true' : undefined}
+                                    onClick={() => setMenuOuvert(false)}
+                                >
+                                    {lien.label}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
+                </nav>
+
+                <div className='header__actions'>
+                    <button
+                        className='icon-btn'
+                        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                        title={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+                    >
+                        <i className={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'} aria-hidden="true"></i>
+                        <span className='visually-hidden'>{theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}</span>
+                    </button>
+                    <button
+                        className='icon-btn header__burger'
+                        onClick={() => setMenuOuvert(!menuOuvert)}
+                        aria-expanded={menuOuvert}
+                        aria-controls='nav-menu'
+                    >
+                        <i className={menuOuvert ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'} aria-hidden="true"></i>
+                        <span className='visually-hidden'>{menuOuvert ? 'Fermer le menu' : 'Ouvrir le menu'}</span>
+                    </button>
                 </div>
-
-            </nav>
+            </div>
         </header>
-
-
     )
-
 }
 
 export default Header

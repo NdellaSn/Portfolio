@@ -1,33 +1,42 @@
 @import "../../utils/styles/variables.scss";
 @import "../../utils/styles/mixin.scss";
 
-
 .coordonnee {
-    border: 1px solid $Gris300;
-    border-radius: 5px;
-    padding: 22px 15px !important;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+
+  i {
+    width: 24px;
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--violet);
+  }
+
+  div {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
-    background: $dark;
-    color: white;
+    flex-direction: column;
+  }
 
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  &__title {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
 
-    p {
-        font-size: 14px;
-        color: $Gris400;
-    }
+  a,
+  span:not(.coordonnee__title) {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
 
-    i {
-        font-size: 24px;
-        margin-left: 5%;
-        color: $Gris400;
+  a {
+    text-decoration: none;
+    border-radius: 2px;
+
+    &:hover {
+      color: var(--violet);
     }
+  }
 }

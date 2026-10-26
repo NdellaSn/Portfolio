@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import './projetcover.scss'
 import './modal.scss'
 import Projetdetails from '../ProjetDetails';
+import { categories } from '../../data/projetsDesign';
 
 Modal.setAppElement('#root');
 
@@ -10,37 +11,52 @@ function ProjetCover({ data }) {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     return (
-        <>
-            <article className='projet' onClick={() => { setIsOpen(true) }}>
-                <div className='projet__cover'>
-                    <img src={data.cover} alt={"couverture projet " + data.title} />
+        <li className='projet'>
+            <div className='projet__cover'>
+                <img src={data.cover} alt="" loading="lazy" />
+                <span className='projet__categorie'>{categories[data.categorie]}</span>
+            </div>
+            <div className='projet__info'>
+                <div>
+                    <h3 className='projet__title'>
+                        {/* le bouton couvre toute la carte (voir ::after) */}
+                        <button className='projet__open' onClick={() => setIsOpen(true)}>
+                            {data.title}
+                        </button>
+                    </h3>
+                    <p className='projet__tag'>{data.tags}</p>
                 </div>
-                <div className='projet__footer'>
-                    <h3 className='projet__footer__title'>{data.title} </h3>
-                    <p className='projet__footer__tag'>{data.tags}</p>
-                    <div className='projet__footer__link'>
-                        <button onClick={() => setIsOpen(true)} title="voir le projet" ><i className="fa-solid fa-circle-plus"  ></i></button>
-                        <a href={data.github} target="_blank" rel="noopener noreferrer" title="projet github"><i className="fa-brands fa-github"></i></a>
-                        {
-                            data.lien &&
-                            <a href={data.lien} target="_blank" rel="noopener noreferrer" title="lien du projet"><i className="fa-solid fa-link"></i></a>
-                        }
-                    </div>
+                <div className='projet__links'>
+                    {data.github &&
+                        <a href={data.github} target="_blank" rel="noopener noreferrer" title={'Code de ' + data.title + ' sur GitHub'}>
+                            <i className="fa-brands fa-github" aria-hidden="true"></i>
+                            <span className='visually-hidden'>Code de {data.title} sur GitHub</span>
+                        </a>
+                    }
+                    {data.lien &&
+                        <a href={data.lien} target="_blank" rel="noopener noreferrer" title={'Voir le site ' + data.title}>
+                            <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            <span className='visually-hidden'>Voir le site {data.title}</span>
+                        </a>
+                    }
                 </div>
-            </article>
-            
-            <Modal isOpen={modalIsOpen}>
-                <div className="modal__header">
-                    <button onClick={() => setIsOpen(false)} className='btn__close' title='fermeture pop-up'>
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
+            </div>
 
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setIsOpen(false)}
+                className='modal'
+                overlayClassName='modal__overlay'
+                bodyOpenClassName='modal-open'
+                contentLabel={'Projet ' + data.title}
+            >
+                <button onClick={() => setIsOpen(false)} className='modal__close icon-btn'>
+                    <i className="fa-solid fa-xmark" aria-hidden="true"></i>
+                    <span className='visually-hidden'>Fermer</span>
+                </button>
                 <Projetdetails data={data}></Projetdetails>
             </Modal>
-        </>
-
+        </li>
     )
-
 }
 export default ProjetCover

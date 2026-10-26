@@ -1,21 +1,59 @@
-@mixin absolute-full() {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100vh;
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
 }
 
-@mixin title-hover($width:100%, $height:100%) {
-  background-image: linear-gradient(120deg, $Main700 0%, $Main400 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-  padding: 5px;
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--violet);
+    outline-offset: 3px;
+  }
+}
+
+@mixin btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  font: 500 1rem/1 $font-body;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  @include focus-ring;
+}
+
+@mixin btn-primary {
+  @include btn;
+  background: var(--violet);
+  color: var(--on-violet);
 
   &:hover {
-    background-size: $width $height;
-    border-radius: 5px;
+    background: var(--violet-strong);
+  }
+
+  &:disabled {
+    background: var(--line);
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn;
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+
+  &:hover {
+    border-color: var(--ink);
   }
 }

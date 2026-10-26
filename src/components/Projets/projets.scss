@@ -1,17 +1,59 @@
 @import "../../utils/styles/variables.scss";
 @import "../../utils/styles/mixin.scss";
 
-.projets {
+.projets__filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
 
-  .projets__list {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
+.filtre {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 
-    @media screen and (max-width: 765px) {
-      grid-template-columns: 1fr
+  &:hover {
+    border-color: var(--ink);
+  }
 
+  &__nombre {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  &--actif {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+
+    .filtre__nombre {
+      color: inherit;
+      opacity: 0.7;
     }
+  }
+}
 
+.projets__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 32px;
+  margin: 0;
+  padding: 0;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 }

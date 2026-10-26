@@ -12,48 +12,102 @@ const logicielList = [
 
     {
         "id": "pf-html5",
-        "name": "Html5",
+        "groupe": "dev",
+        "name": "HTML5",
         "logo": html5
     },
     {
         "id": "pf-sass",
+        "groupe": "dev",
         "name": "Sass",
         "logo": sass
     },
     {
         "id": "pf-js",
-        "name": "Java Script",
+        "groupe": "dev",
+        "name": "JavaScript",
         "logo": javascript
     },
     {
         "id": "pf-react",
-        "name": "React Js",
+        "groupe": "dev",
+        "name": "React",
         "logo": react
     },
     {
         "id": "pf-redux",
+        "groupe": "dev",
         "name": "Redux",
         "logo": redux
     },
     {
         "id": "pf-figma",
+        "groupe": "design",
         "name": "Figma",
         "logo": figma
     },
     {
         "id": "pf-ps",
+        "groupe": "design",
         "name": "Photoshop",
         "logo": ps
     },
     {
         "id": "pf-ai",
+        "groupe": "design",
         "name": "Illustrator",
         "logo": ai
     },
     {
         "id": "pf-notion",
+        "groupe": "design",
         "name": "Notion",
         "logo": notion
+    },
+    {
+        "id": "pf-xd",
+        "groupe": "design",
+        "name": "Adobe XD"
+    },
+    {
+        "id": "pf-premiere",
+        "groupe": "design",
+        "name": "Premiere Pro"
+    },
+    {
+        "id": "pf-after-effects",
+        "groupe": "design",
+        "name": "After Effects"
+    },
+    {
+        "id": "pf-final-cut",
+        "groupe": "design",
+        "name": "Final Cut Pro"
+    },
+    {
+        "id": "pf-miro",
+        "groupe": "design",
+        "name": "Miro"
+    },
+    {
+        "id": "pf-maze",
+        "groupe": "design",
+        "name": "Maze"
+    },
+    {
+        "id": "ux-recherche",
+        "groupe": "ux",
+        "name": "Recherche utilisateur, personas, customer journey"
+    },
+    {
+        "id": "ux-wireframe",
+        "groupe": "ux",
+        "name": "Wireframes et prototypage"
+    },
+    {
+        "id": "ux-tests",
+        "groupe": "ux",
+        "name": "Tests utilisateurs et analyse"
     },
 ]
 

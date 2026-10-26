@@ -1,16 +1,15 @@
 import './logiciel.scss'
 
-function Logiciel({logo, name}) {
+function Logiciel({ logo, name }) {
     return (
-        <article className='logiciel'>
-            <div className='logiciel__bg'>
-                <img src={logo} alt={'logiciel '+name}  width="30%" height="100%"/>
-            </div>
-            <div className='logiciel__cover'>
-                <p>{name}</p>
-            </div>
-        </article>
-
+        <li className={logo ? 'logiciel' : 'logiciel logiciel--texte'}>
+            {logo &&
+                <span className='logiciel__logo'>
+                    <img src={logo} alt="" width="28" height="28" loading="lazy" />
+                </span>
+            }
+            {name}
+        </li>
     )
 }
 export default Logiciel

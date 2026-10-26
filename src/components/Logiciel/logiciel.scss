@@ -2,55 +2,33 @@
 @import "../../utils/styles/mixin.scss";
 
 .logiciel {
-  width: 10%;
-  height: 100px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px 8px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 500;
 
-  @media screen and (max-width: 765px) {
-    width: 30%;
-    height: 100px;
+  &--texte {
+    padding: 10px 20px;
+    min-height: 62px;
   }
 
-  &>* {
-    width: 100%;
-    height: 100%;
+  &__logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: all 0.5s ease-in-out;
-  }
-
-  &__bg {
-    background: $Gris100;
-    opacity: 1;
-    transform: scale(1);
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    // fond clair fixe : les logos sont faits pour un fond blanc
+    background: #ffffff;
 
     img {
-      width: 30%;
+      width: 26px;
+      height: 26px;
       object-fit: contain;
     }
-  }
-
-  &__cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $Main800;
-    color: white;
-    font-weight: 500;
-    transform: scale(1.2);
-    opacity: 0;
-  }
-
-  &:hover .logiciel__bg {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-
-  &:hover .logiciel__cover {
-    transform: scale(1);
-    opacity: 1;
   }
 }

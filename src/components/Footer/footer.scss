@@ -1,99 +1,47 @@
 @import "../../utils/styles/variables.scss";
 @import "../../utils/styles/mixin.scss";
 
-footer {
-    margin-top: 50px;
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--line);
+
+  @include mobile {
+    margin-top: 80px;
+  }
+
+  &__inner {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    background: $dark;
-    gap: 20px;
+    gap: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
-    .footer__logo {
-        width: 5%;
-        object-fit: contain;
+  &__copyright {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
 
-        @media screen and (max-width: 765px) {
-            width: 10%;
+  &__link {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 
-        }
+    a {
+      font-size: 0.9375rem;
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 2px;
 
+      &:hover {
+        color: var(--ink);
+      }
     }
-
-    .nav__footer {
-        list-style: none;
-        display: flex;
-        padding: 0;
-        gap: 30px;
-        font-size: 12px;
-
-        @media screen and (max-width: 765px) {
-            gap: 14px;
-        }
-
-        * {
-            text-decoration: none;
-            color: $Gris400;
-        }
-
-
-    }
-
-    .footer_reseau {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-
-        @media screen and (max-width: 765px) {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
-
-        * {
-            color: $Gris400;
-        }
-
-        .footer__link {
-            display: flex;
-            gap: 20px;
-
-            @media screen and (max-width: 765px) {
-                order: -1;
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        span {
-            width: 20%;
-            font-size: 12px;
-
-            @media screen and (max-width: 765px) {
-                width: 60%;
-
-            }
-
-            &:nth-last-of-type(2) {
-                @media screen and (max-width: 765px) {
-                    width: 32%;
-
-                }
-
-            }
-
-            .dark__mode__btn {
-                border-radius: 20px;
-                width: 30px;
-                height: 30px;
-                background: none;
-                border: 1px solid $Gris400;
-
-            }
-        }
-
-
-
-    }
-
+  }
 }

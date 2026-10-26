@@ -1,19 +1,15 @@
 import './coordonnee.scss'
 
-function Coordonnee({ title, donnee, icon }) {
-
+function Coordonnee({ title, donnee, icon, href }) {
     return (
-        <div className="coordonnee">
+        <li className="coordonnee">
+            <i className={icon} aria-hidden="true"></i>
             <div>
-                <h3 >{title}</h3>
-                <p >{donnee}</p>
+                <span className='coordonnee__title'>{title}</span>
+                {href ? <a href={href}>{donnee}</a> : <span>{donnee}</span>}
             </div>
-            <i className={icon}></i>
-
-        </div>
+        </li>
     )
-
 }
-
 
 export default Coordonnee;

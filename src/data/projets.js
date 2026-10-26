@@ -10,6 +10,7 @@ import argentbank from '../assets/images/projets/argentbank.webp'
 const projetsList = [
     {
         "id": "proj-front-nina",
+        "categorie": "dev",
         "name": "Nina Carducci",
         "title": "Nina Carducci",
         "tags": "Référencement SEO",
@@ -19,16 +20,17 @@ const projetsList = [
         "details": {
             "client": "Nina Carducci, jeune photographe professionnelle",
             "présentation": "Nina Carducci, une photographe basée à Bordeaux souhaite améliorer son portfolio pour avoir  une meilleure visibilité ",
-            "objectif": "En tant que développeuse freelance, prospecter des clients est important et demande du temps, surtout en début de carrière. Ce projet vous montre quelques bonnes pratiques pour contacter de potentiels clients, et pour décrocher de nouveaux contrats. L’objectif de ce projet était d’ améliorer le site de la jeune phographe pour assurer une meilleure accessibilité, des performances optimisées et un bon référencement SEO. En commençant par par identifier et  corriger les différents problèmes de chargement et de référencement  du site  ensuite j’ ai amélioré  l’accessibilité du site en ajoutant les balises sémantiques.",
+            "objectif": "En tant que développeuse freelance, prospecter des clients est important et demande du temps, surtout en début de carrière. Ce projet vous montre quelques bonnes pratiques pour contacter de potentiels clients, et pour décrocher de nouveaux contrats. L’objectif de ce projet était d’ améliorer le site de la jeune photographe pour assurer une meilleure accessibilité, des performances optimisées et un bon référencement SEO. En commençant par par identifier et  corriger les différents problèmes de chargement et de référencement  du site  ensuite j’ ai amélioré  l’accessibilité du site en ajoutant les balises sémantiques.",
             "tags": ['SEO', 'Accessibilité', 'Optimisation'],
 
         }
     },
     {
         "id": "proj-front-booki",
+        "categorie": "dev",
         "name": "Booki",
         "title": "Booki",
-        "tags": "HTML - CSS",
+        "tags": "HTML et CSS",
         "cover": booki,
         "github": "https://github.com/NdellaSn/Projet3",
         "lien": "https://ndellasn.github.io/Projet3/",
@@ -43,9 +45,10 @@ const projetsList = [
 
     {
         "id": "proj-print-it-js",
+        "categorie": "dev",
         "name": "Print it",
         "title": "Print it",
-        "tags": "Java Script",
+        "tags": "JavaScript",
         "cover": Print,
         "github": "https://github.com/NdellaSn/Print-it-JS",
         "lien": "https://ndellasn.github.io/Print-it-JS/",
@@ -61,9 +64,10 @@ const projetsList = [
 
     {
         "id": "proj-Kasa",
+        "categorie": "dev",
         "name": "Kasa",
         "title": "Kasa",
-        "tags": "REACT",
+        "tags": "React",
         "cover": kasa,
         "github": "https://github.com/NdellaSn/Kasa",
         "lien": "https://mns-kasa.netlify.app/",
@@ -79,9 +83,10 @@ const projetsList = [
 
     {
         "id": "proj-oh-my-food",
+        "categorie": "dev",
         "name": "OhMyFood",
         "title": "OhMyFood",
-        "tags": "HTML-CSS",
+        "tags": "HTML et Sass, mobile first",
         "cover": OhMyFood,
         "github": "https://github.com/NdellaSn/OhMyFood",
         "lien": "https://ndellasn.github.io/OhMyFood/",
@@ -98,9 +103,10 @@ const projetsList = [
 
     {
         "id": "proj-ArgentBank",
+        "categorie": "dev",
         "name": "Argent Bank",
         "title": "Argent Bank",
-        "tags": "REACT - REDUX",
+        "tags": "React et Redux",
         "cover": argentbank,
         "github": "https://github.com/NdellaSn/ArgentBank-website",
         "lien": "https://mns-agentbank.netlify.app/",

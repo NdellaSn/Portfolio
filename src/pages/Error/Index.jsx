@@ -1,12 +1,12 @@
-import errorImg from '../../assets/images/404.gif'
 import './erreur.scss'
 
 export default function Error() {
-
     return (
-        <div className='error'>
-            <img src={errorImg} alt="Erreur 404" />
-            <a className='back__home' href="/">Retour à la page d'accueil</a>
-        </div>
+        <main className='error wrap'>
+            <p className='error__code' aria-hidden="true">404</p>
+            <h1>Cette page n'existe pas.</h1>
+            <p className='error__text'>L'adresse est peut-être mal saisie, ou la page a été déplacée.</p>
+            <a className='btn btn--primary' href="/">Retour à l'accueil</a>
+        </main>
     )
 }

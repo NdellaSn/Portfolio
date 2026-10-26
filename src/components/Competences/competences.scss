@@ -2,15 +2,35 @@
 @import "../../utils/styles/mixin.scss";
 
 .competences {
+  &__groupe {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
 
-  .competences__logiciels {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-
-    @media screen and (max-width: 765px) {
-      flex-wrap: wrap;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
-    
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding-top: 18px;
+
+      @include mobile {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__logiciels {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
   }
 }

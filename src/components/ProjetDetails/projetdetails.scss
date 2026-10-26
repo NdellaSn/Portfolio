@@ -1,96 +1,164 @@
 @import "../../utils/styles/variables.scss";
 @import "../../utils/styles/mixin.scss";
 
-
 .details {
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__cover {
+    background: var(--surface);
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 720px;
+      object-fit: cover;
+      object-position: top;
+
+      @include tablet {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+
+  &__body {
+    padding: 56px 48px 48px;
+
+    @include mobile {
+      padding: 28px 20px 32px;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  &__infos {
+    margin: 0;
+
+    dt {
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    dd {
+      margin: 4px 0 20px;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+  }
+
+  &__texte {
+    margin-bottom: 20px;
+    font-size: 0.9375rem;
+    color: var(--muted);
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .details__resume {
+      color: var(--ink);
+      font-size: 1.0625rem;
+    }
+
+    h3 {
+      margin: 20px 0 6px;
+      font-family: $font-body;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  }
+
+  &__tags {
+    list-style: none;
     display: flex;
-    height: 100%;
-    overflow: hidden;
-    gap: 4%;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 32px;
+    padding: 0;
 
-    @media screen and (max-width: 766px) {
-        flex-direction: column;
+    li {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: 0.875rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__medias {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 48px;
+    border-top: 1px solid var(--line);
+
+    @include mobile {
+      padding: 32px 20px;
     }
 
-    .details__cover {
-        order: 1;
-        width: 56%;
-        height: 100%;
-        overflow: hidden;
-
-        @media screen and (max-width: 766px) {
-            order: -1;
-            width: 100%;
-            height: 30%;
-        }
-
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
+  }
 
-    .details__body {
-        padding: 2%;
-        padding-top: 8%;
-        width: 60%;
+  &__prototype iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--line);
+    border-radius: $radius-m;
+    background: var(--surface);
+  }
 
-        @media screen and (max-width: 766px) {
-            padding-top: unset;
-        padding: 4%;
-            width: 100%;
+  &__videos__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 
-        }
-
-
-
-        .details__body__title {
-            font-size: 28px;
-            margin: 0;
-            margin-bottom: 4%;
-        }
-
-        .details__body__subtitle {
-            margin: 0;
-            font-size: 15px;
-
-            &:nth-of-type(1) {
-                margin-bottom: 4%;
-            }
-
-            span {
-                font-weight: 400;
-                font-size: 14px;
-
-            }
-        }
-
-        p {
-            font-size: 14px;
-            text-align: justify;
-        }
-
-        .details__body__block {
-            display: flex;
-            gap: 14px;
-            padding-bottom: 16px;
-            @media screen and (max-width: 766px) {
-                gap: 8px;
-            }
-            .details__body__block__tags {
-                background: $Main800;
-                border: none;
-                border-radius: 4px;
-                color: white;
-                padding: 4px 6px;
-                @media screen and (max-width: 766px) {
-                    font-size: 10px;
-        
-                }
-
-            }
-        }
-
+    video {
+      width: 100%;
+      max-height: 70vh;
+      border-radius: $radius-m;
+      background: #000000;
     }
+  }
+
+  // grille en colonnes : les maquettes ont des hauteurs très variables
+  &__galerie__grid {
+    columns: 3 220px;
+    column-gap: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 16px;
+      border-radius: $radius-s;
+      border: 1px solid var(--line);
+      break-inside: avoid;
+    }
+  }
 }

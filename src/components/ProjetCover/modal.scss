@@ -1,49 +1,62 @@
 @import "../../utils/styles/variables.scss";
 @import "../../utils/styles/mixin.scss";
 
-
-.ReactModal__Overlay,
-.ReactModal__Overlay--after-open {
-    z-index: 30;
-    background-color: rgba($Main800, 0.6) !important;
+.modal-open {
+  overflow: hidden;
 }
 
-.ReactModal__Content,
-.ReactModal__Content--after-open {
-    top: 20% !important;
-    left: 10% !important;
-    height: 80%;
-    width: 80%;
-    padding: 0 !important;
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(18, 13, 36, 0.7);
+  animation: fade 0.2s ease-out;
 
-    @media screen and (max-width: 766px) {
-        width: 100%;
-        left: 0 !important;
-        border-radius: 20px 20px 0 0 !important;
-
-    }
-
+  @include mobile {
+    align-items: flex-end;
+    padding: 0;
+  }
 }
 
-.modal__header {
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: $radius-l;
+  outline: none;
+  animation: pop 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  @include mobile {
+    max-height: 92vh;
+    border-radius: $radius-l $radius-l 0 0;
+  }
+
+  &__close {
     position: absolute;
-    top: 4%;
-    left: 2%;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    background: var(--paper);
+  }
+}
 
-    @media screen and (max-width: 766px) {
-        top: 2%;
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
 
-    }
-
-    .btn__close {
-        background: white;
-        border: none;
-        font-size: 22px;
-        border-radius: 20px;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        align-content: center;
-        padding: 0 !important;
-    }
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
 }

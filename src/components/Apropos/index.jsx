@@ -1,26 +1,47 @@
 import './apropos.scss'
 import placeholder from '../../assets/images/mouhamed-ali.webp'
 
+const points = [
+    { titre: 'Direction artistique', texte: 'Identités visuelles, supports graphiques et vidéos qui donnent du caractère à une marque.' },
+    { titre: 'UX design', texte: 'Recherche utilisateur, parcours et prototypes Figma pour des interfaces simples à utiliser.' },
+    { titre: 'Développement front-end', texte: 'Des sites en React et Sass, responsives, accessibles et fidèles aux maquettes.' },
+    { titre: 'SEO et IA', texte: "Audits techniques, stratégie de mots-clés et outils d'IA pour gagner en visibilité sur Google." },
+]
+
 function Apropos() {
-
     return (
-        <section className='a-propos section-item' data-item="1" id='a-propos'>
-            <h2 className='section__title'>A PROPOS
-                <span>Qui suis-je ?</span>
-            </h2>
+        <section className='section a-propos' id='a-propos'>
+            <div className='wrap'>
+                <div className='a-propos__grid'>
+                    <div>
+                        <div className='section__head'>
+                            <h2>À propos</h2>
+                        </div>
+                        <p className='a-propos__lead'>
+                            Je crée des projets web complets, de l'identité visuelle jusqu'au référencement.
+                        </p>
+                        <p className='a-propos__text'>
+                            Formée à la direction artistique, à l'UX design puis au développement front-end, je suis chaque projet du début à la fin : comprendre le public visé, concevoir une interface claire, la développer en React et la rendre visible sur les moteurs de recherche. Aujourd'hui, je me spécialise dans le SEO et l'intelligence artificielle, avec la même attention au détail, à l'accessibilité et aux résultats mesurables.
+                        </p>
+                        <a className='btn btn--primary' href="#contact">
+                            <i className="fa-regular fa-envelope" aria-hidden="true"></i> Me contacter
+                        </a>
+                    </div>
 
-            <div className='placeholder'>
-                <p>
-                    Je crée des projets numériques en mettant l'accent sur l'expérience utilisateur, en m'assurant qu'ils répondent aux besoins et aux attentes du public cible défini dans l'étude marketing. Je travaille en étroite collaboration avec les équipes de conception pour aligner le concept du projet sur les personas identifiés, en utilisant une approche de conception centrée sur l'utilisateur. En utilisant la méthode de l'entonnoir, je guide le processus de développement en affinant progressivement les idées pour créer des solutions web qui sont à la fois attrayantes et fonctionnelles pour un large éventail d'utilisateurs, en mettant particulièrement l'accent sur l'inclusion et l'accessibilité.
-                </p>
-                <img src={placeholder} alt="Maquette Mouhamed Ali" width="45%" height="100%" />
+                    <figure className='a-propos__visuel'>
+                        <img src={placeholder} alt="Maquette du site Ali'Ve sur tablette et mobile" width="469" height="263" loading="lazy" />
+                    </figure>
+                </div>
+
+                <ul className='a-propos__points'>
+                    {points.map((point) => (
+                        <li key={point.titre}>
+                            <h3>{point.titre}</h3>
+                            <p>{point.texte}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
-
-            <div className='me__contacter'>
-                <a className='btn' href="#contact" ><i className="fa-regular fa-envelope"></i> Me contacter</a>
-
-            </div>
-
         </section>
     )
 }

@@ -1,68 +1,39 @@
-import { useEffect } from 'react';
-import bg from '../../assets/images/971.webp'
 import './welcome.scss'
 
 function Welcome() {
-
-    useEffect(() => {
-        setTimeout(type, 1000)
-
-    })
-
     return (
-        <div className='welcome section-item' data-item="0" id='welcome'>
-            <img className='welcome__img' src={bg} alt='background bienvenu' />
-            <div className='welcome__bloc__title'>
-                <h1 className='letter-by-letter' >
-                    <p className='hello'> Hello !</p>
-                    <span id='presentation'></span>
-                    <span className='tap-bar'>|</span>
+        <section className='welcome' id='welcome'>
+            <div className='wrap welcome__inner'>
+                <div className='welcome__text'>
+                    <h1 className='welcome__name'>
+                        <span>Mame</span>
+                        <span>Ndella</span>
+                        <span>Sène.</span>
+                    </h1>
+                    <p className='welcome__intro'>
+                        Du design à la mise en ligne : j'imagine l'identité visuelle, je conçois l'expérience utilisateur, je développe le site et je le rends visible sur Google.
+                    </p>
+                    <div className='welcome__actions'>
+                        <a className='btn btn--primary' href="#projets">Voir mes projets</a>
+                        <a className='btn btn--secondary' href="mame-ndella-sene.pdf" download="mame-ndella-sene.pdf">
+                            <i className="fa-regular fa-file-pdf" aria-hidden="true"></i> Télécharger mon CV
+                        </a>
+                    </div>
+                    <ul className='welcome__social'>
+                        <li><a href="https://www.linkedin.com/in/mame-ndella-sene-0123321a5/" target="_blank" rel="noopener noreferrer" title='LinkedIn'><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i><span className='visually-hidden'>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/NdellaSn" target="_blank" rel="noopener noreferrer" title='GitHub'><i className="fa-brands fa-github" aria-hidden="true"></i><span className='visually-hidden'>GitHub</span></a></li>
+                        <li><a href="mailto:contact@mamendella.fr" title='contact@mamendella.fr'><i className="fa-regular fa-envelope" aria-hidden="true"></i><span className='visually-hidden'>Email</span></a></li>
+                    </ul>
+                </div>
 
-                </h1>
-                <div className='welcome__link' id='welcome__link'>
-                    <a href="https://www.linkedin.com/in/mame-ndella-sene-0123321a5/" target="_blank" rel="noopener noreferrer" title='visiter mon profile linkdin' ><i className="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://github.com/NdellaSn" target="_blank" rel="noopener noreferrer" title='visiter mon github'><i className="fa-brands fa-github"></i></a>
-                    <a href="mailto:contact@mamendella.fr" target="_blank" rel="noopener noreferrer" title='me contacter par mail'><i className="fa-regular fa-envelope"></i></a>
-                    <a href="mame-ndella-sene.pdf" download="mame-ndella-sene.pdf" title='mon cv'><i className="fa-regular fa-file-pdf" title='télécharger mon cv au format pdf'></i></a>
+                {/* les deux arches reprennent le « m » du logo */}
+                <div className='welcome__arches' aria-hidden="true">
+                    <span className='arch arch--1'></span>
+                    <span className='arch arch--2'></span>
                 </div>
             </div>
-            <div className='welcome__down__page'>
-                <i className="fa-solid fa-arrow-down"></i>
-            </div>
-            <div className='welcome__cover'></div>
-        </div>
+        </section>
     )
 }
 
 export default Welcome;
-let indexLettre = 0;
-let indexPhrase = 0
-const tableauPhrases = ["Je suis Mame Ndella SENE.", "Je suis Développeuse Frontend."]
-
-
-
-function type() {
-
-    if (indexPhrase >= tableauPhrases.length) {
-        document.getElementById("welcome__link").style.transform = "translateY(0px)";
-        document.getElementById("welcome__link").style.opacity = 1;
-        return
-    }
-
-    const phrase = tableauPhrases[indexPhrase];
-
-    if (indexLettre < phrase.length) {
-        document.getElementById("presentation").innerHTML += phrase.charAt(indexLettre);
-        indexLettre++;
-        setTimeout(type, 100);
-    }
-    else {
-        indexLettre = 0;
-        indexPhrase++
-        document.getElementById("presentation").innerHTML += (indexPhrase < tableauPhrases.length ? "<br/>" : "");
-        setTimeout(type, 3000)
-
-    }
-
-
-}
